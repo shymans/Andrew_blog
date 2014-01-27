@@ -1,0 +1,11 @@
+<nav class="top-bar" data-topbar>
+  <ul class="title-area">
+    <li class="name"><h1>NCAA 2014</h1></li>
+  </ul>
+   <a href="#" data-dropdown="drop" class="button dropdown">Site Options</a><br>
+    <ul id="drop" data-dropdown-content class="f-dropdown">
+      <li><%= link_to 'New Article', articles_new_path %></li>
+      <li><%= link_to 'Edit Article', articles_edit_path %></li>
+      <li><%= link_to 'Show Article', articles_show_path %></li>
+    </ul>
+</nav>
