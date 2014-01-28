@@ -1,8 +1,7 @@
 Blogger::Application.routes.draw do
-  get "articles/index"
-  get "articles/show"
-  get "articles/new"
-  get "articles/edit"
+  get "users/new"
+  get "users/create"
+  resources :articles
 
   root 'articles#index'
   # The priority is based upon order of creation: first created -> highest priority.
