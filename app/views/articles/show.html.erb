@@ -1,5 +1,18 @@
-<%= @article.title %><br>
-<%= @article.body %><br>
 <% if @article.user_id == current_user.id %>
-<%= link_to "Delete", @article, :method => :delete %>
+<%= link_to "Delete", @article, :method => :delete %> |
+<%= link_to "Edit", edit_article_path(@article) %> 
 <% end %>
+<div class="row">
+  <div class="small-2 columns"></div>
+  <div class="small-8 columns">
+    <%= @article.title %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="large-2 columns"></div>
+  <div class="large-8 columns">
+    <%= @article.body %>
+  </div>
+</div>
+

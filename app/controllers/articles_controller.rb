@@ -25,9 +25,18 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(article_params)
+      redirect_to article_path(@article)
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @article = Article.find(params[:id])
-    if @article.user_id == current_user
+    if @article.user_id == current_user.id
       @article.destroy
       redirect_to articles_path
     else

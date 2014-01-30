@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
 
   validates_presence_of :password, :on => :create
   validates_presence_of :name
+  validates :email, uniqueness: true
 end

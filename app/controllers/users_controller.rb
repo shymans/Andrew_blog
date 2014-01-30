@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
+    @user.name.capitalize!
     if @user.save
       redirect_to articles_url
     else

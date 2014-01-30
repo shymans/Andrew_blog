@@ -1,2 +1,21 @@
-<h1>Articles#edit</h1>
-<p>Find me in app/views/articles/edit.html.erb</p>
+<%= form_for(@article) do |f| %>
+  <div class="row">
+    <div class="small-4 columns">
+      <div class="field">
+        <%= f.label :title %><br/>
+        <%= f.text_field :title %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-10 columns">
+      <div class="field">
+        <%= f.label :body %><br/>
+        <%= f.text_field :body %>
+      </div>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
