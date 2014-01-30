@@ -13,6 +13,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user_id = current_user.id
     if @article.save
       redirect_to articles_url
     else
@@ -22,6 +23,16 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    if @article.user_id == current_user
+      @article.destroy
+      redirect_to articles_path
+    else
+      redirect_to articles_path
+    end
   end
 
   private

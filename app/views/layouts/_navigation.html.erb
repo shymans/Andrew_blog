@@ -1,10 +1,37 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
-    <li class="name"><h1><%= link_to 'NCAA 2014', root_path %></h1></li>
+    <li class="name">
+      <h1><a href="#">March Madness 2014</a></h1>
+    </li>
   </ul>
-   <a href="#" data-dropdown="drop" class="button dropdown">Site Options</a><br>
-    <ul id="drop" data-dropdown-content class="f-dropdown">
-      <li><%= link_to 'New Article', new_article_path %></li>
-   
+
+  <section class="top-bar-section">
+
+    <ul class="left">
+      <li><a href="/articles">Home</a></li>
     </ul>
+    
+    <% if current_user %>
+      <ul class="left">
+        <li class="has-dropdown">
+          <a href="#">Site Options</a>
+          <ul class="dropdown">
+            <li><a href="/articles/new">Create an Article</a></li>
+          </ul>
+        </li>
+      </ul>
+    <% end %>
+
+    <ul class="right">
+      <% if current_user %>
+        <li><a href="#"><%= current_user.name %></a></li>
+        <li><a href="#"><%= link_to "Log out", session_path("current"), :method => :delete %></a></li>
+      <% else %>
+        <li><a href="/sessions/new">Sign In</a></li>
+        <li><a href="/users/new">Sign Up</a></li>
+      <% end %>
+    </ul>
+   
+    
+  </section>
 </nav>

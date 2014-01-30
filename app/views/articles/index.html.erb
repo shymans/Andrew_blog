@@ -1,4 +1,18 @@
-<% @articles.each do |article| %>
-  <%= article.title %><br>
-  <%= article.body %><br>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th width="300">Title</th>
+      <th width="800">Article</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= link_to article.title, "/articles/#{article.id}" %></td>
+        <td><%= article.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
