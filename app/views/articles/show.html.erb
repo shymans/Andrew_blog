@@ -3,16 +3,15 @@
 <%= link_to "Edit", edit_article_path(@article) %> 
 <% end %>
 <div class="row">
-  <div class="small-2 columns"></div>
-  <div class="small-8 columns">
+  <div class="large-3 columns">
     <%= @article.title %>
   </div>
-</div>
-<br>
-<div class="row">
-  <div class="large-2 columns"></div>
-  <div class="large-8 columns">
+  <div class="large-6 columns">
     <%= @article.body %>
   </div>
+  <div class="large-3 columns">
+    <%= image_tag @article.url %>
+  </div>
 </div>
+
 

@@ -9,7 +9,7 @@
     <% @articles.each do |article| %>
       <tr>
         <td><%= link_to article.title, "/articles/#{article.id}" %></td>
-        <td><%= article.body %></td>
+        <td><%= truncate(article.body, length: 250) %></td>
       </tr>
     <% end %>
   </tbody>

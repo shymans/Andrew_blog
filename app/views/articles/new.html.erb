@@ -1,20 +1,32 @@
 <%= form_for(@article) do |f| %>
+  
   <div class="row">
     <div class="small-4 columns">
       <div class="field">
-        <%= f.label :title %><br/>
+        <%= f.label :title %>
         <%= f.text_field :title %>
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="small-6 columns">
+      <div class="field">
+        <%= f.label "Image URL" %>
+        <%= f.text_field :url %>
+      </div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="large-10 columns">
       <div class="field">
-        <%= f.label :body %><br/>
+        <%= f.label :body %>
         <%= f.text_field :body %>
       </div>
     </div>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
