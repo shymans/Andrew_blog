@@ -8,7 +8,11 @@
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.title, "/articles/#{article.id}" %></td>
+        <% if current_user %>
+          <td><%= link_to article.title, "/articles/#{article.id}" %></td>
+        <% else %>
+          <td><%= article.title %></td>
+        <% end %>
         <td><%= truncate(article.body, length: 250) %></td>
       </tr>
     <% end %>
