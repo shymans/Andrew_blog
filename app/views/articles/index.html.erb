@@ -9,9 +9,9 @@
     <% @articles.each do |article| %>
       <tr>
         <% if current_user %>
-          <td><%= link_to article.title, "/articles/#{article.id}" %></td>
+          <td><%= link_to article.title, "/articles/#{article.id}" %> | <%= article.created_at %></td>
         <% else %>
-          <td><%= article.title %></td>
+          <td><%= article.title (article.created_at) %></td>
         <% end %>
         <td><%= truncate(article.body, length: 250) %></td>
       </tr>
