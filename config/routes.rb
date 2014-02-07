@@ -1,10 +1,11 @@
 Blogger::Application.routes.draw do
 
  
+  resources :home, :only => [:index]
   resources :articles
   resources :users, :only => [:new, :create, :show]
   resources :sessions, :only => [:new, :create, :destroy]
-  root 'articles#index'
+  root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
